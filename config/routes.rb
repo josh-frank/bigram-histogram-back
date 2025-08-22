@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   root "application#about", as: "about"
   post "/histogram", to: "histograms#create"
+  get "/histogram/:id", to: "histograms#show"
 
 end

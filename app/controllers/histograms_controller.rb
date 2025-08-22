@@ -13,6 +13,19 @@ class HistogramsController < ApplicationController
     end
   end
 
+  def show
+    @histogram = Histogram.find( params[ :id ] )
+    unless @histogram.nil?
+      render json: {
+        id: @histogram.id,
+        corpus: @histogram.corpus,
+        histogram: @histogram.to_obj
+      }, status: 200
+    else
+      render json: { errors: [."Not found" ] }, status: 403
+    end
+  end
+
   private
 
   def histogram_params
