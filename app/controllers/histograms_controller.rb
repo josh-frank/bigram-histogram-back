@@ -22,7 +22,7 @@ class HistogramsController < ApplicationController
         histogram: @histogram.to_obj
       }, status: 200
     else
-      render json: { errors: [."Not found" ] }, status: 403
+      render json: { errors: [ "Not found" ] }, status: 403
     end
   end
 
